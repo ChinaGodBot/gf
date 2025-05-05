@@ -138,7 +138,7 @@ def main(threads):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="控制并发线程数量")
-    parser.add_argument('--threads', type=int, default=20,
+    parser.add_argument('--threads', type=int, default=10,
                         help="设置并发线程的数")
     args = parser.parse_args()
     main(args.threads)
