@@ -17,7 +17,8 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          bash run.sh
+          #bash run.sh
+          python run.py
         env:
          REPO: ${{ github.repository }}
          TOKEN: ${{ secrets.GITHUB_TOKEN }}
