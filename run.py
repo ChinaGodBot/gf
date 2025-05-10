@@ -29,7 +29,7 @@ def trigger_workflow():
 
 def get_lasted_user_id():
     url = "https://greasyfork.org/en/users"
-    response = requests.get(url)
+    response = requests.get(url, verify=False)
     if response.status_code == 200:
         # 使用正则表达式来提取用户 ID
         match = re.search(r'users/(\d+)-', response.text)
