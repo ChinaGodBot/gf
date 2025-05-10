@@ -45,7 +45,7 @@ def get_lasted_user_id():
 
 def get_created_at(user_id):
     url = f"https://api.greasyfork.org/users/{user_id}.json"
-    response = requests.get(url)
+    response = requests.get(url, verify=False)
     if response.status_code == 200:
         data = response.json()
         return data.get('created_at', None)
