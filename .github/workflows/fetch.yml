@@ -1,0 +1,26 @@
+name: Fetch
+
+on:
+  schedule:           
+    - cron: '0 4 * * *'  
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+      
+      
+      - name: 运行
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          #bash run.sh
+          python run.py
+        env:
+         REPO: ${{ github.repository }}
+         TOKEN: ${{ secrets.GITHUB_TOKEN }}
